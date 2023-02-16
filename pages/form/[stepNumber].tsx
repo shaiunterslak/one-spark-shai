@@ -1,15 +1,31 @@
 import { useRouter } from 'next/router';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { VIEW_ALL_QUESTIONS_ENDPOINT } from '../constants';
+import Question from '@/components/Question';
+import QuestionType from '@/interfaces/question';
+import { Form, Formik } from 'formik';
 
-// Represents a section, takes in
-export default function Section({ section }) {
+export default function Section({ section }: { section: QuestionType[] }) {
   return (
-    <div>
-      {section.map((question) => {
-        return <h2>{question.label}</h2>;
-      })}
-    </div>
+    <Formik
+      initialValues={{
+        firstName: '',
+        lastName: '',
+        email: '',
+      }}
+      onSubmit={(values) => {
+        setTimeout(() => {
+          alert(JSON.stringify(values, null, 2));
+        }, 500);
+      }}
+    >
+      <Form>
+        {section.map((question: QuestionType) => {
+          return <Question question={question} key={question.name} />;
+        })}
+        <button type='submit'>Next</button>
+      </Form>
+    </Formik>
   );
 }
 
@@ -27,8 +43,8 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   let res = await fetch(VIEW_ALL_QUESTIONS_ENDPOINT, { method: 'GET' });
   let data = await res.json();
-  let transformedSectionData = data.sections[params.stepNumber];
+  let transformedSectionData = data.sections[params.stepNumber].questions;
   return {
-    props: { section: transformedSectionData.questions },
+    props: { section: transformedSectionData },
   };
 }
