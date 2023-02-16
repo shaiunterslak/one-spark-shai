@@ -1,0 +1,1 @@
+export const VIEW_ALL_QUESTIONS_ENDPOINT = "https://6356e07f2712d01e14fe89d4.mockapi.io/api/v1/questions"
