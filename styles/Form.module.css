@@ -1,0 +1,29 @@
+.formWrapper{
+    margin-top:50px;
+    max-width: 1100px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #f0f0f0;
+    border-radius:10px;
+    padding:20px;
+}
+
+
+.button{
+    border: none;
+    background-color:#00dbe5;
+    color:white;
+    font-weight: 800;
+    font-size: 20px;
+    padding:5px 20px;
+    margin-top:20px;
+    width:fit-content;
+    border-radius:8px;
+    transition-duration:200ms;
+}
+
+.button:hover{
+    cursor: pointer;
+    background-color: #31b3c9;
+}
