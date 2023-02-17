@@ -6,19 +6,29 @@
 }
 
 .stepPoint{
+    border:none;
     width:30px;
     height:30px;
     border-radius: 100%;
-    background-color: black;
+    background-color: grey;
     display: flex;
     justify-content:center;
     align-items: center;
+    text-decoration: none;
+}
+
+.completed .stepPoint, .completed .stepLine{
+    background-color: black;
+}
+
+.stepPoint:hover{
+    cursor: pointer;
 }
 
 .stepLine{
     height:5px;
     width:100px;
-    background-color: black;
+    background-color: grey;
 }
 
 .step{

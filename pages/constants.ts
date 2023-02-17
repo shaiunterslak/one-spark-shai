@@ -1,1 +1,1 @@
-export const VIEW_ALL_QUESTIONS_ENDPOINT = "https://6356e07f2712d01e14fe89d4.mockapi.io/api/v1/questions"
+export const VIEW_ALL_QUESTIONS_ENDPOINT = "https://d0a72046-dbae-4dcf-8ce5-5110222053ac.mock.pstmn.io/questions" 

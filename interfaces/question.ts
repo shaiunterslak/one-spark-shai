@@ -6,7 +6,7 @@ type QuestionType = {
     name: string
     required: boolean
     options?: OptionType[]
-    type: 'inline_numeric'|'inline_select'|'radio'|'select'|'checkbox'|'search_select'|'text'|'numeric';
+    type: 'inline_numeric'|'inline_select'|'radio'|'select'|'checkbox'|'search_select'|'text'|'numeric'|'tel'|'currency';
   }
   
   export default QuestionType

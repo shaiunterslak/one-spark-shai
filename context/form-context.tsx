@@ -16,15 +16,23 @@ function FormProvider({ children }) {
   };
 
   const addSectionToForm = (newFormSection) => {
-    const newForm = {
-      sections: [
-        ...form.sections,
-        {
-          sectionNumber: newFormSection.sectionNumber,
-          answers: newFormSection.answers,
-        },
-      ],
-    };
+    let newForm = {};
+    // Check if the form section has been submitted before
+    if (form.sections[newFormSection.sectionNumber]) {
+      newForm = form;
+      newForm.sections[newFormSection.sectionNumber].answers =
+        newFormSection.answers;
+    } else {
+      newForm = {
+        sections: [
+          ...form.sections,
+          {
+            sectionNumber: newFormSection.sectionNumber,
+            answers: newFormSection.answers,
+          },
+        ],
+      };
+    }
     saveForm(newForm);
   };
 

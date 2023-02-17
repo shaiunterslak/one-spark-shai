@@ -12,7 +12,7 @@
 }
 
 
-.radioGroup, .checkboxGroup{
+.checkboxGroup{
     display: flex;
     flex-direction: column;
 }
