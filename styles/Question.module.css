@@ -6,10 +6,13 @@
 }
 
 
+.textField, .numberField{
+    max-width:300px;
+    font-size:22px;
+}
 
 
-
-.radioGroup{
+.radioGroup, .checkboxGroup{
     display: flex;
     flex-direction: column;
 }

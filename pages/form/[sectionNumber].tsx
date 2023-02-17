@@ -6,18 +6,21 @@ import QuestionType from '@/interfaces/question';
 import { Form, Formik } from 'formik';
 import { useForm } from '../../context/form-context';
 import styles from '../../styles/Form.module.css';
+import { Inter } from '@next/font/google';
+import Progress from '@/components/Progress';
+const inter = Inter({ subsets: ['latin'] });
 
 export default function Section({ section }: { section: QuestionType[] }) {
   const router = useRouter();
   const { form, addSectionToForm } = useForm();
-
   const handleSubmit = (values, actions) => {
     const { sectionNumber } = router.query;
     addSectionToForm({ sectionNumber: sectionNumber, answers: values });
     router.replace(`/form/${Number(sectionNumber) + 1}`);
   };
   return (
-    <div>
+    <div className={inter.className}>
+      <Progress formSections={form.sections} />
       <Formik initialValues={{}} onSubmit={handleSubmit}>
         <Form className={styles.formWrapper}>
           {section.map((question: QuestionType) => {

@@ -25,7 +25,40 @@ export default function Question(question) {
             id={questionData.name}
             name={questionData.name}
             type='number'
+            className={styles.numberField}
           />
+        </div>
+      );
+    } else if (questionData.type === 'numeric') {
+      return (
+        <div className={styles.questionWrapper}>
+          <label htmlFor={questionData.label}>{questionData.label}</label>
+          <Field
+            id={questionData.name}
+            name={questionData.name}
+            type='number'
+            className={styles.numberField}
+          />
+        </div>
+      );
+    } else if (questionData.type === 'select') {
+      return (
+        <div className={styles.questionWrapper}>
+          <label htmlFor={questionData.label}>{questionData.label}</label>
+          <Field
+            id={questionData.name}
+            name={questionData.name}
+            as='select'
+            className={styles.numberField}
+          >
+            {questionData.options?.map((option) => {
+              return (
+                <option key={option.value} value={option.value}>
+                  {option.text}
+                </option>
+              );
+            })}
+          </Field>
         </div>
       );
     } else if (questionData.type === 'radio') {
@@ -37,11 +70,12 @@ export default function Question(question) {
             className={styles.radioGroup}
           >
             <label>{questionData.label}</label>
+
             {questionData.options?.map((option) => {
               return (
-                <label htmlFor={option.label}>
+                <label key={option.value}>
                   <Field type='radio' name='picked' value={option.value} />
-                  {option.label}
+                  {option.text}
                 </label>
               );
             })}
@@ -52,12 +86,16 @@ export default function Question(question) {
       return (
         <div className={styles.questionWrapper}>
           <label>{questionData.label}</label>
-          <div role='group' aria-labelledby='my-checkbox-group'>
+          <div
+            role='group'
+            aria-labelledby='my-checkbox-group'
+            className={styles.checkboxGroup}
+          >
             {questionData.options?.map((option) => {
               return (
                 <label>
                   <Field type='checkbox' name='picked' value={option.value} />
-                  {option.label}
+                  {option.text}
                 </label>
               );
             })}

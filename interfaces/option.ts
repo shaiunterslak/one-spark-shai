@@ -1,7 +1,7 @@
 
 type OptionType = {
   id: string
-  label: string
+  text: string
   value: string
   }
 
