@@ -1,8 +1,6 @@
 import { Field } from 'formik';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import styles from './InlineSelectField.module.css';
 import questionStyles from '../Question/Question.module.css';
+import styles from './InlineSelectField.module.css';
 import splitInlineLabel from '@/shared/utils';
 
 export default function InlineSelectField({ question }) {
@@ -11,8 +9,13 @@ export default function InlineSelectField({ question }) {
   return (
     <div className={questionStyles.questionWrapper}>
       <label htmlFor={question.label}>
-        {splitLabel.firstPartOfLabel}
-        <Field id={question.name} name={question.name} as='select'>
+        <span>{splitLabel.firstPartOfLabel}</span>
+        <Field
+          id={question.name}
+          name={question.name}
+          as='select'
+          className={styles.inlineSelectField}
+        >
           {question.options?.map((option) => {
             return (
               <option key={option.value} value={option.value}>
@@ -21,8 +24,9 @@ export default function InlineSelectField({ question }) {
             );
           })}
         </Field>
-        {splitLabel.secondPartOfLabel}
+        <span>{splitLabel.secondPartOfLabel}</span>
       </label>
+      <p>({question.description})</p>
     </div>
   );
 }

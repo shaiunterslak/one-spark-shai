@@ -24,6 +24,7 @@ export default function Progress({ totalNumberOfSections }) {
         return (
           Number(index) >= 1 && (
             <div
+              key={index}
               className={`${styles.step} ${
                 isCompleted(index) ? styles.completed : ''
               }`}

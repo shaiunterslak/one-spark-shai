@@ -1,7 +1,4 @@
 import { Field } from 'formik';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import styles from './NumericField.module.css';
 import questionStyles from '../Question/Question.module.css';
 
 export default function NumericField({ question }) {
@@ -12,7 +9,7 @@ export default function NumericField({ question }) {
         id={question.name}
         name={question.name}
         type='number'
-        className={styles.numberField}
+        className={questionStyles.numberField}
       />
     </div>
   );

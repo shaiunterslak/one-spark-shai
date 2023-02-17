@@ -11,7 +11,7 @@ export default function TelephoneField({ question }) {
       <Field
         id={question.name}
         name={question.name}
-        className={styles.textField}
+        className={questionStyles.textField}
         type='tel'
       />
     </div>

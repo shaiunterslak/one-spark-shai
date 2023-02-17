@@ -11,7 +11,7 @@ export default function TextField({ question }) {
       <Field
         id={question.name}
         name={question.name}
-        className={styles.textField}
+        className={questionStyles.textField}
       />
     </div>
   );

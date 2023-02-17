@@ -6,13 +6,15 @@ import questionStyles from '../Question/Question.module.css';
 import { useState } from 'react';
 
 export default function RadioGroup({ question }) {
-  const [checked, setChecked] = useState('h');
+  const [checked, setChecked] = useState();
+
   return (
     <div
       role='group'
       aria-labelledby='my-radio-group'
       className={`${questionStyles.questionWrapper} ${styles.radioGroup}`}
     >
+      <label>{question.label}</label>
       {question.options?.map((option) => {
         return (
           <label

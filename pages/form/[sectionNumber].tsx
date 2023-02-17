@@ -41,6 +41,16 @@ export default function Section({
   return (
     <div className={inter.className}>
       <Progress totalNumberOfSections={totalNumberOfSections} />
+      <div className={styles.background}></div>
+      {Number(sectionNumber) == 0 && (
+        <div className={styles.firstSectionHero}>
+          <h1>Let’s calculate your monthly premium</h1>
+          <p>
+            This takes less than 2 minutes, and you’ll walk away with an upfront
+            estimate.
+          </p>
+        </div>
+      )}
       <Formik
         enableReinitialize
         initialValues={formSectionValues}
@@ -55,11 +65,11 @@ export default function Section({
 
           {onLastFormSection() ? (
             <button type='submit' className={styles.button}>
-              Complete form
+              <span>Complete form</span> <img src='/right-arrow.svg'></img>
             </button>
           ) : (
             <button type='submit' className={styles.button}>
-              Next
+              <span>Next</span> <img src='/right-arrow.svg'></img>
             </button>
           )}
         </Form>

@@ -10,7 +10,7 @@
     width:30px;
     height:30px;
     border-radius: 100%;
-    background-color: grey;
+    background-color: #EBE8FE;
     display: flex;
     justify-content:center;
     align-items: center;
@@ -18,7 +18,7 @@
 }
 
 .completed .stepPoint, .completed .stepLine{
-    background-color: black;
+    background-color: #5538EE;
 }
 
 .stepPoint:hover{
@@ -28,7 +28,7 @@
 .stepLine{
     height:5px;
     width:100px;
-    background-color: grey;
+    background-color: #EBE8FE;
 }
 
 .step{

@@ -9,17 +9,17 @@ export default function InlineNumericField({ question }) {
   let splitLabel = splitInlineLabel(question.label);
 
   return (
-    <div className={styles.questionWrapper}>
-      <label htmlFor={question.label}>
-        {splitLabel.firstPartOfLabel}
+    <div className={questionStyles.questionWrapper}>
+      <label htmlFor={question.label} className={styles.inlineLabel}>
+        <span>{splitLabel.firstPartOfLabel}</span>
         <Field
           id={question.name}
           name={question.name}
           type='number'
-          className={styles.numberField}
-          isRequired={true}
+          className={styles.inlineNumberField}
+          placeholder='30'
         />
-        {splitLabel.secondPartOfLabel}
+        <span>{splitLabel.secondPartOfLabel}</span>
       </label>
     </div>
   );

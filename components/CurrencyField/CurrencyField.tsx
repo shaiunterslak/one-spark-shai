@@ -12,7 +12,8 @@ export default function CurrencyField({ question }) {
         id={question.name}
         name={question.name}
         type='currency'
-        className={styles.numberField}
+        placeholder='R100000'
+        className={`${questionStyles.numberField}`}
       />
     </div>
   );

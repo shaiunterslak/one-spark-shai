@@ -4,19 +4,24 @@
     gap:10px;
 }
 
+/* hide default radio button */
 .radioGroup input[type="radio"] {display: none;}
 
-.radioGroup label:hover{
+.radioGroup .radioInput:hover{
     cursor: pointer;
 }
 
-.radioGroup label{
-    background-color: bisque;
-    border-radius: 8px;
-    font-weight: bold;
+.radioGroup .radioInput{
+    border-radius: 30px;
+    width: fit-content;
+    padding: 10px 24px;
+    border: 1px solid #F2F4F5;
+    font-weight: normal;
+    max-width: 500px;
 }
 
 .radioGroup .checked {
-    background-color: black;
-    color: bisque;
+    color: #6B4EFF;
+    background: #EBE8FE;
+    border: 1px solid transparent;
 }
