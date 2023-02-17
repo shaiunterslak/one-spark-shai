@@ -1,5 +1,4 @@
 import { useRouter } from 'next/router';
-import { VIEW_ALL_QUESTIONS_ENDPOINT } from '../constants';
 import Question from '@/components/Question/Question';
 import QuestionType from '@/interfaces/question';
 import { Form, Formik } from 'formik';
@@ -64,7 +63,7 @@ export default function Section({
 }
 
 export async function getStaticPaths() {
-  let res = await fetch(VIEW_ALL_QUESTIONS_ENDPOINT, { method: 'GET' });
+  let res = await fetch(process.env.questionsUrl, { method: 'GET' });
   let data = await res.json();
   let transformedSectionData = data.sections.map((section, index) => {
     return { params: { sectionNumber: index.toString() } };
@@ -75,7 +74,7 @@ export async function getStaticPaths() {
   };
 }
 export async function getStaticProps({ params }) {
-  let res = await fetch(VIEW_ALL_QUESTIONS_ENDPOINT, { method: 'GET' });
+  let res = await fetch(process.env.questionsUrl, { method: 'GET' });
   let data = await res.json();
   let transformedSectionData = data.sections[params.sectionNumber].questions;
   return {
