@@ -12,7 +12,7 @@ export default function SearchSelectField({ question }) {
         {question.options?.map((option) => {
           return (
             <option key={option.value} value={option.value}>
-              {option.text}
+              {option.text || option.label}
             </option>
           );
         })}

@@ -20,6 +20,7 @@ export default function Section({
   const { sectionNumber } = router.query;
 
   const handleSubmit = (values, actions) => {
+    actions.setSubmitting(false);
     addSectionToForm({ sectionNumber: sectionNumber, answers: values });
     onLastFormSection()
       ? alert(
@@ -37,11 +38,16 @@ export default function Section({
     ? form.sections[sectionNumber].answers
     : {};
 
-  console.log(formSectionValues);
   return (
     <div className={inter.className}>
       <Progress totalNumberOfSections={totalNumberOfSections} />
-      <Formik initialValues={formSectionValues} onSubmit={handleSubmit}>
+      <Formik
+        enableReinitialize
+        initialValues={formSectionValues}
+        onSubmit={(values, actions) => {
+          handleSubmit(values, actions);
+        }}
+      >
         <Form className={styles.formWrapper}>
           {section.map((question: QuestionType) => {
             return <Question question={question} key={question.name} />;
