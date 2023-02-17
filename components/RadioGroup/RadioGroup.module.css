@@ -1,4 +1,22 @@
 .radioGroup{
     display: flex;
     flex-direction: column;
+    gap:10px;
+}
+
+.radioGroup input[type="radio"] {display: none;}
+
+.radioGroup label:hover{
+    cursor: pointer;
+}
+
+.radioGroup label{
+    background-color: bisque;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.radioGroup .checked {
+    background-color: black;
+    color: bisque;
 }
