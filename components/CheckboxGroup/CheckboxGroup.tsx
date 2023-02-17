@@ -15,7 +15,7 @@ export default function CheckboxGroup({ question }) {
       >
         {question.options?.map((option) => {
           return (
-            <label>
+            <label key={option.name}>
               <Field
                 type='checkbox'
                 name={question.name}
