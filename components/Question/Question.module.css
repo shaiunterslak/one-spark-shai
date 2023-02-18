@@ -6,10 +6,11 @@
 }
 
 
-.textField, .numberField{
+.textField, .numberField ,.questionWrapper select{
     border: 1px solid #E3E5E5;
     font-size: 16px;
     padding: 20px 10px;
+    border-radius: 8px;
 }
 
 
@@ -18,11 +19,7 @@
     flex-direction: column;
 }
 
-.questionWrapper select {
-    border: 1px solid #E3E5E5;
-    font-size: 16px;
-    padding: 20px 10px;
-}
+
 
 .questionWrapper label{
     font-weight: bold;
