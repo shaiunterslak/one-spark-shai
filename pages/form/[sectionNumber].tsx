@@ -23,11 +23,7 @@ export default function Section({
     actions.setSubmitting(false);
     addSectionToForm({ sectionNumber: sectionNumber, answers: values });
     onLastFormSection()
-      ? alert(
-          `Form completed, here is all your data: ${JSON.stringify(
-            form.sections
-          )}`
-        )
+      ? router.replace('/success')
       : router.replace(`/form/${Number(sectionNumber) + 1}`);
   };
 

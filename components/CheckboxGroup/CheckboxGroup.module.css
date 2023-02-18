@@ -8,6 +8,7 @@
 
 .checkboxGroup .checkboxInput:hover{
     cursor: pointer;
+    background-color: #E0E5E8;
 }
 
 .checkboxGroup .checkboxInput{
@@ -18,6 +19,7 @@
     border: 1px solid #F2F4F5;
     font-weight: normal;
 }
+
 
 .checkboxGroup .checked {
     color: #6B4EFF;

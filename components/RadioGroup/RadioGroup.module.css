@@ -9,6 +9,7 @@
 
 .radioGroup .radioInput:hover{
     cursor: pointer;
+    background-color: #E0E5E8;
 }
 
 .radioGroup .radioInput{
