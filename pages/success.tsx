@@ -7,11 +7,11 @@ export default function Success() {
   return (
     <div className={inter.className}>
       <h1>Thanks for signing up to OneSpark</h1>
-      <p>Here's your data:</p>
+      <p>Here is your data:</p>
 
       {form.sections.map((section) => {
         return (
-          <div>
+          <div key={section.sectionNumber}>
             <h3>Section number: {Number(section.sectionNumber) + 1}</h3>
             {JSON.stringify(section.answers)}
           </div>
