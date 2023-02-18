@@ -35,7 +35,7 @@ export default function Section({
     : {};
 
   return (
-    <div className={inter.className}>
+    <div className={`${inter.className} ${styles.container}`}>
       <Progress totalNumberOfSections={totalNumberOfSections} />
       <div className={styles.background}></div>
       {Number(sectionNumber) == 0 && (

@@ -40,3 +40,12 @@
     color:white;
     font-weight: bold;
 }
+
+
+@media(max-width:500px) {
+
+    .stepLine{
+        width: 35px;
+    }
+    
+}
