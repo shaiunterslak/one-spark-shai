@@ -37,7 +37,6 @@ export default function Section({
   return (
     <div className={`${inter.className} ${styles.container}`}>
       <Progress totalNumberOfSections={totalNumberOfSections} />
-      <div className={styles.background}></div>
       {Number(sectionNumber) == 0 && (
         <div className={styles.firstSectionHero}>
           <h1>Let’s calculate your monthly premium</h1>
