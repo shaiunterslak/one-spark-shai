@@ -37,7 +37,7 @@ function FormProvider({ children }) {
   };
 
   const clearForm = () => {
-    saveForm({});
+    saveForm({ sections: [] });
   };
 
   const loadForm = () => {

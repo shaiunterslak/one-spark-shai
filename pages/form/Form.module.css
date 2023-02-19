@@ -59,3 +59,23 @@
 .button:hover img{
     transform: translateX(3px);
 }
+
+.modalWrapper h1{
+    text-align: center;
+}
+
+.modalWrapper{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+
+.successImage{
+    height:50px;
+}
+
+.data{
+    max-width: 500px;
+    word-break: break-all;
+    overflow: scroll;
+}
