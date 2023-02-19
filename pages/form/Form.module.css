@@ -48,9 +48,14 @@
 
 .button img{
     height:20px;
+    transition-duration:200ms;
 }
 
 .button:hover{
     cursor: pointer;
     background-color: #3517cb;
+}
+
+.button:hover img{
+    transform: translateX(3px);
 }
